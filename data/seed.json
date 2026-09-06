@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {"id":"EMP1024","name":"Aarav Shah","department":"Finance"},
+    {"id":"EMP1025","name":"Maya Rao","department":"Engineering"},
+    {"id":"EMP1026","name":"Jordan Lee","department":"Operations"}
+  ],
+  "articles": [
+    {"id":"KB001","title":"Reset VPN password","tags":"vpn password reset login","body":"Northstar demo policy: Open the employee password portal, choose Reset password, verify your identity with the registered factor, and set a new password. Reconnect the VPN with the updated password. Never send your password to this assistant. If identity verification fails, raise an IT ticket."},
+    {"id":"KB002","title":"VPN connection troubleshooting","tags":"vpn connect connection network","body":"Check that your internet connection works. Close and reopen the approved VPN client. Record the exact error message and try reconnecting once. If it still fails, create a ticket with the error and approximate start time. These are fictional organization instructions."},
+    {"id":"KB003","title":"Laptop performance","tags":"laptop slow performance","body":"Save your work and restart the laptop. Check available disk space using system settings. If the problem persists, describe the affected application and symptoms in a support ticket. Do not disable security software."},
+    {"id":"KB004","title":"Printer troubleshooting","tags":"printer printing blank paper","body":"Check paper and ink or toner indicators. Confirm that you selected the correct printer. Record any display error. Raise a ticket if the issue persists."},
+    {"id":"KB005","title":"Email sign-in help","tags":"email login password outlook","body":"Confirm that you are using your work account. Retry sign-in through the approved mail application. If your account is locked or the second factor is unavailable, raise an IT support ticket. Do not share verification codes."},
+    {"id":"KB006","title":"Office WiFi connection","tags":"wifi wireless network connect","body":"Confirm that WiFi is enabled and choose the approved office network. Reconnect once. If the connection fails, include the office location and displayed error in your ticket."}
+  ],
+  "tickets": [
+    {"id":"IT-1001","employee_id":"EMP1024","title":"Laptop battery drains quickly","description":"My laptop battery lasts less than an hour.","status":"In progress","created_at":"2026-09-01T09:00:00+00:00"},
+    {"id":"IT-1002","employee_id":"EMP1024","title":"Email sign-in issue","description":"Email sign-in fails after password reset.","status":"Resolved","created_at":"2026-09-02T10:00:00+00:00"},
+    {"id":"IT-1003","employee_id":"EMP1025","title":"VPN connection failure","description":"My VPN disconnects every five minutes.","status":"Open","created_at":"2026-09-03T11:00:00+00:00"}
+  ]
+}
