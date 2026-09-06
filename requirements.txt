@@ -1,0 +1,5 @@
+langgraph==1.2.11
+streamlit==1.63.0
+openai==2.54.0
+python-dotenv==1.2.3
+pydantic==2.13.5
