@@ -1,0 +1,53 @@
+
+USER: How do I reset my VPN password? 
+ASSISTANT: Retrieved guidance [KB001] — Reset VPN password
+Northstar demo policy: Open the employee password portal, choose Reset password, verify your identity with the registered factor, and set a new password. Reconnect the VPN with the updated password. Never send your password to this assistant. If identity verification fails, raise an IT ticket.
+
+Retrieved guidance [KB002] — VPN connection troubleshooting
+Check that your internet connection works. Close and reopen the approved VPN client. Record the exact error message and try reconnecting once. If it still fails, create a ticket with the error and approximate start time. These are fictional organization instructions.
+
+Retrieved guidance [KB005] — Email sign-in help
+Confirm that you are using your work account. Retry sign-in through the approved mail application. If your account is locked or the second factor is unavailable, raise an IT support ticket. Do not share verification codes. 
+WORKFLOW: decision -> knowledge_search -> response
+
+USER: What is the status of my laptop issue? 
+ASSISTANT: IT-1001 — Laptop battery drains quickly
+Status: In progress
+Created: 2026-09-01T09:00:00+00:00 
+WORKFLOW: decision -> ticket_lookup -> response
+
+USER: Please raise a ticket 
+ASSISTANT: Describe the issue in at least 10 characters, including what is failing. 
+WORKFLOW: decision -> validate_missing_information -> response
+
+USER: My printer prints blank pages 
+ASSISTANT: Review ticket for EMP1024:
+
+Title: My printer prints blank pages
+
+Description: My printer prints blank pages
+
+Type confirm to create, or cancel to discard. 
+WORKFLOW: decision -> validate -> prepare_draft -> response
+
+USER: confirm 
+ASSISTANT: Created IT-209E70E67B6C.
+Title: My printer prints blank pages
+Status: Open 
+WORKFLOW: decision -> ticket_creation -> response
+
+USER: My printer prints blank pages. Please raise a ticket. 
+ASSISTANT: Review ticket for EMP1024:
+
+Title: My printer prints blank pages
+
+Description: My printer prints blank pages
+
+Type confirm to create, or cancel to discard. 
+WORKFLOW: decision -> validate -> prepare_draft -> response
+
+USER: confirm 
+ASSISTANT: An identical active ticket already exists. Reusing IT-209E70E67B6C.
+Title: My printer prints blank pages
+Status: Open 
+WORKFLOW: decision -> ticket_creation -> response

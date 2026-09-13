@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-09-13T06:30:39.035263+00:00",
+  "provider": "OpenRouter",
+  "model": "openrouter/free",
+  "passed": true,
+  "checks": [
+    {
+      "case": "knowledge",
+      "passed": true,
+      "trace": [
+        "decision",
+        "knowledge_search",
+        "response"
+      ],
+      "reply": "Retrieved guidance [KB001] \u2014 Reset VPN password\nNorthstar demo policy: Open the employee password portal, choose Reset password, verify your identity with the registered factor, and set a new password. Reconnect the VPN with the updated password. Never send your password to this assistant. If identity verification fails, raise an IT ticket.\n\nRetrieved guidance [KB002] \u2014 VPN connection troubleshooting\nCheck that your internet connection works. Close and reopen the approved VPN client. Record the exact error message and try reconnecting once. If it still fails, create a ticket with the error and approximate start time. These are fictional organization instructions.\n\nRetrieved guidance [KB005] \u2014 Email sign-in help\nConfirm that you are using your work account. Retry sign-in through the approved mail application. If your account is locked or the second factor is unavailable, raise an IT support ticket. Do not share verification codes."
+    },
+    {
+      "case": "lookup",
+      "passed": true,
+      "trace": [
+        "decision",
+        "ticket_lookup",
+        "response"
+      ],
+      "reply": "IT-1001 \u2014 Laptop battery drains quickly\nStatus: In progress\nCreated: 2026-09-01T09:00:00+00:00"
+    },
+    {
+      "case": "missing_information",
+      "passed": true,
+      "trace": [
+        "decision",
+        "validate_missing_information",
+        "response"
+      ],
+      "reply": "Describe the issue in at least 10 characters, including what is failing."
+    },
+    {
+      "case": "draft",
+      "passed": true,
+      "trace": [
+        "decision",
+        "validate",
+        "prepare_draft",
+        "response"
+      ],
+      "reply": "Review ticket for EMP1024:\n\nTitle: Printer printing blank pages\n\nDescription: User reports that their printer is printing blank pages. Need to investigate the cause and resolve the issue.\n\nType confirm to create, or cancel to discard."
+    },
+    {
+      "case": "confirmed_creation",
+      "passed": true,
+      "trace": [
+        "decision",
+        "ticket_creation",
+        "response"
+      ],
+      "reply": "Created IT-99DBE7EF406E.\nTitle: Printer printing blank pages\nStatus: Open"
+    }
+  ]
+}

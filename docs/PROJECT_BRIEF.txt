@@ -1,0 +1,192 @@
+Project 3 – AI Operations Assistant Using Agentic AI
+Project Objective
+Build a basic Agentic AI assistant that can understand a user’s request, decide which tool is required, execute the appropriate tool and return the final response.
+The objective is to demonstrate practical understanding of:
+Tool Calling → Agent → State → Routing → Multi-Step Workflow
+The project should remain intentionally realistic and achievable on a local machine.
+________________________________________
+Suggested Business Scenario
+Build an AI IT Support Assistant for a fictional organization.
+The assistant should help employees with common IT support requests.
+The system will have access to a few local tools/data sources.
+For example:
+•	Employee information
+•	IT issue/ticket database
+•	Knowledge base
+•	System status information
+•	Ticket creation functionality
+The data can be represented using simple JSON, CSV or SQLite files.
+No real enterprise system integration is required.
+________________________________________
+Required Tools
+The agent should have at least three tools.
+Tool 1 – Knowledge Search
+Search a local IT knowledge base.
+Example:
+User: How do I reset my VPN password?
+
+Agent → Knowledge Search Tool
+      → Finds relevant article
+      → Generates answer
+________________________________________
+Tool 2 – Ticket Lookup
+Search existing support tickets stored locally.
+Example:
+User: What is the status of my laptop issue?
+
+Agent → Ticket Lookup Tool
+      → Searches ticket data
+      → Returns ticket status
+________________________________________
+Tool 3 – Ticket Creation
+Create a new support ticket in a local JSON/SQLite database.
+Example:
+User: My VPN is not working. Please raise a ticket.
+
+Agent → Collect required information
+      → Create Ticket Tool
+      → Generate ticket ID
+      → Confirm creation
+________________________________________
+Agent Requirements
+The agent should be able to:
+•	Understand the user’s request.
+•	Decide whether a tool is required.
+•	Select the appropriate tool.
+•	Pass appropriate parameters to the tool.
+•	Process the tool response.
+•	Generate a final user-friendly response.
+________________________________________
+LangGraph Requirement
+Learners should use LangGraph for workflow orchestration.
+The workflow should demonstrate:
+•	State
+•	Nodes
+•	Edges
+•	Conditional routing
+•	Tool execution
+•	Final response generation
+A possible architecture:
+User Query
+    ↓
+Intent / Decision Node
+    ↓
+Conditional Routing
+    ├── Knowledge Search
+    ├── Ticket Lookup
+    └── Ticket Creation
+             ↓
+        Tool Result
+             ↓
+      Response Generation
+             ↓
+        Final Answer
+________________________________________
+Memory / State
+The agent should maintain relevant state during the conversation.
+Example:
+User:
+I have a VPN issue.
+
+Agent:
+What is your employee ID?
+
+User:
+EMP1024.
+
+Agent:
+I found your profile. Would you like me to check existing tickets?
+
+User:
+Yes.
+The workflow should retain the required information across these interactions.
+________________________________________
+Safety / Validation Requirements
+The agent should not blindly execute every action.
+For example:
+•	Validate required information before creating a ticket.
+•	Do not create duplicate tickets unnecessarily.
+•	Clearly communicate when information is missing.
+•	Handle tool failures gracefully.
+•	Do not invent ticket information.
+•	Clearly distinguish between retrieved information and generated recommendations.
+________________________________________
+User Interface
+A simple Streamlit interface is recommended.
+The application should provide:
+•	Chat interface
+•	Conversation history
+•	Clear/reset option
+•	Tool/action result visibility where appropriate
+•	Error handling
+________________________________________
+Expected Technical Skills Demonstrated
+The project should demonstrate:
+•	Python
+•	LangGraph
+•	Agentic AI
+•	Tool Calling
+•	Function Calling
+•	State Management
+•	Conditional Routing
+•	Local Data/Database Integration
+•	Prompt Engineering
+•	Streamlit
+•	Error Handling
+•	Modular Architecture
+CrewAI may be used as an alternative to LangGraph, provided the learner demonstrates equivalent agentic workflow concepts.
+________________________________________
+Common Submission Requirements
+Regardless of the selected project, every learner must submit the following.
+1. Source Code
+•	Complete Python source code.
+•	Proper project structure.
+•	Modular implementation.
+•	No unnecessary hard-coded values.
+•	Clear variable and function names.
+2. README.md
+The README should contain:
+•	Project title
+•	Problem statement
+•	Solution overview
+•	Architecture diagram
+•	Technology stack
+•	Project structure
+•	Setup instructions
+•	Environment variable requirements
+•	How to run the application
+•	Sample inputs
+•	Sample outputs
+•	Key design decisions
+•	Limitations
+3. Sample Data
+Learners must provide sufficient sample data so that the evaluator can run the application without creating data from scratch.
+4. Demonstration
+The learner should provide either:
+•	A short demonstration video, or
+•	A live demonstration during evaluation
+The demonstration should show the major functional requirements working.
+5. GitHub Repository
+The project should be maintained in a GitHub repository containing:
+•	Source code
+•	README
+•	Sample data
+•	Requirements file
+•	Configuration/example environment file
+•	Architecture diagram
+API keys or secrets must never be committed to GitHub.
+________________________________________
+Evaluation Criteria
+The assessment will primarily evaluate the following areas:
+Evaluation Area	What Will Be Evaluated
+Functional Completeness	Are the required features actually implemented?
+GenAI Implementation	Is the learner correctly using LLM/GenAI capabilities?
+Architecture	Is the application logically structured and modular?
+Technical Depth	Has the learner implemented the required techniques rather than merely mentioning them?
+Code Quality	Is the code readable, maintainable and reasonably organized?
+Error Handling	Does the application handle common failures gracefully?
+User Experience	Is the application reasonably easy to use?
+Documentation	Can another person understand and run the project?
+Engineering Practices	Git, configuration, environment variables, logging and basic production practices
+Demonstration	Can the learner explain the architecture, implementation and key technical decisions?
+________________________________________

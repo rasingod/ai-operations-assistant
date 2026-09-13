@@ -1,0 +1,9 @@
+flowchart TD
+    Start[Streamlit message and retained state] --> Decision[LangGraph decision node]
+    Decision -->|knowledge or lookup or confirmed draft| Tools[Execute allowlisted tool]
+    Decision -->|new ticket request| Prepare[Validate and prepare draft]
+    Decision -->|no tool or failure| Response[Format grounded response]
+    Prepare --> Response
+    Tools --> Response
+    DB[(SQLite)] --- Tools
+    Response --> End[Display reply and retain state for next turn]
