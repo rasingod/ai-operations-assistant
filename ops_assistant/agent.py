@@ -2,6 +2,7 @@
 import logging
 from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
+from .router import PlannerError
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +38,9 @@ def build_graph(store, router):
                 return {**base,'route':'respond','reply':reply}
             return {**base,'route':('prepare' if decision.name == 'ticket_creation' else decision.name),
                     'arguments':decision.arguments.model_dump()}
+        except PlannerError as exc:
+            logger.warning('planner_provider_failure')
+            return {**base,'route':'respond','reply':f'{exc} No action was taken.'}
         except Exception as exc:
             logger.warning('planner_failure type=%s',type(exc).__name__)
             return {**base,'route':'respond','reply':'The planner is unavailable or returned an invalid action. No action was taken. Please retry.'}
