@@ -131,7 +131,9 @@ def test_llm_function_call_contract(store):
     agent = Assistant(store,router,'EMP1024')
     assert '[KB001]' in agent.chat('VPN password')['reply']
     assert captured['tool_choice'] == 'required'
-    assert captured['parallel_tool_calls'] is False
+    assert 'parallel_tool_calls' not in captured  # Not universally supported by OpenRouter providers.
+    assert captured['extra_body']['provider']['require_parameters'] is True
+    assert captured['max_tokens'] == 1200
     assert len(captured['tools']) == 5
 
 def test_bad_model_tool_rejected(store):
