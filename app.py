@@ -28,7 +28,8 @@ with st.sidebar:
     if settings.mode == 'demo':
         st.warning('Offline rules mode. Enable LLM mode for the GenAI evaluation.')
     else:
-        st.caption('Messages and recent conversation context are sent to the configured model provider.')
+        st.caption(f'OpenRouter model: {settings.model}')
+        st.caption('Messages and recent conversation context are sent to OpenRouter and its selected model provider.')
     reset = st.button('Clear conversation',use_container_width=True)
     st.caption('Clearing chat discards its draft. Saved tickets remain in SQLite.')
 
